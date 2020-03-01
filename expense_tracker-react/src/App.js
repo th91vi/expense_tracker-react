@@ -6,9 +6,11 @@ import { TransactionList } from './components/TransactionList';
 import { AddTransaction } from './components/AddTransaction';
 import './App.css';
 
+import { GlobalProvider } from './context/GlobalState';
+
 function App() {
   return ( // componentes abaixo se comportam como props (Children) de GlobalState
-      <>
+      <GlobalProvider>
         <Header />
         <div className="container">
           <Balance />
@@ -16,8 +18,7 @@ function App() {
           <TransactionList />
           <AddTransaction />
         </div>
-      </>
-      
+      </GlobalProvider>
   );
 }
 
